@@ -20,8 +20,8 @@ export function ChallengeGenerator() {
       <h2>Coding Challenge Generator</h2>
 
       <div className="quota-display">
-        <p>Challenges remaining today: {quota?.quote_remaining || 0}</p>
-        {quota?.quote_remaining === 0 && <p>Next reset: {0}</p>}
+        <p>Challenges remaining today: {quota?.quota_remaining || 0}</p>
+        {quota?.quota_remaining === 0 && <p>Next reset: {0}</p>}
       </div>
 
       <div className="difficulty-selector">
@@ -40,7 +40,7 @@ export function ChallengeGenerator() {
 
       <button
         onClick={generateChallenge}
-        disabled={isLoading || quota?.quote_remaining === 0}
+        disabled={isLoading || quota?.quota_remaining === 0}
         className="generate-button"
       >
         {isLoading ? "Generating..." : "Generate Challenge"}
