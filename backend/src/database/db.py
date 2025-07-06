@@ -50,5 +50,5 @@ def create_challenge(
     return db_challenge
 
 
-def get_user_challenge(db: Session, user_id: str):
+def get_user_challenges(db: Session, user_id: str):
     return db.query(models.Challenge).filter(models.Challenge.user_id == user_id).all()
